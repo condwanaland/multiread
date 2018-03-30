@@ -3,6 +3,8 @@
 #' @param filelist A character vector of csv files
 #' @param id Logical, whether an id column should be included in the
 #' dataframe
+#' @param as_df Logical, whether to return a dataframe instead of a list
+#' of dataframes
 #'
 #' @return A list with elements equal to `length(filelist)``
 #' @export
@@ -13,7 +15,7 @@
 #' mydata <- multiread(files, id = TRUE)
 #' }
 
-multiread <- function(filelist, id = NULL){
+multiread <- function(filelist, id = TRUE, as_df = FALSE){
   if(is.character(filelist) == FALSE){
     stop("filelist must be a character vector")
   }
@@ -21,10 +23,17 @@ multiread <- function(filelist, id = NULL){
     stop("filelist must be greater than length zero")
   }
   if(id == TRUE){
-    lapply(filelist, read_ids)
+    ldata <- lapply(filelist, read_ids)
   }
   else{
-    lapply(filelist, read.csv)
+    ldata <- lapply(filelist, utils::read.csv)
+  }
+  if(as_df == FALSE){
+    return(ldata)
+  }
+  else{
+    ddata <- do.call(rbind, ldata)
+    return(ddata)
   }
 }
 

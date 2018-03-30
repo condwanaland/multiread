@@ -14,6 +14,6 @@
 #' }
 
 read_ids <- function(filelist){
-  read.csv(filelist) %>%
+  utils::read.csv(filelist) %>%
     dplyr::mutate(.id_col = filelist)
 }

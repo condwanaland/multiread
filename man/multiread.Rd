@@ -4,13 +4,16 @@
 \alias{multiread}
 \title{multiread}
 \usage{
-multiread(filelist, id = NULL)
+multiread(filelist, id = TRUE, as_df = FALSE)
 }
 \arguments{
 \item{filelist}{A character vector of csv files}
 
 \item{id}{Logical, whether an id column should be included in the
 dataframe}
+
+\item{as_df}{Logical, whether to return a dataframe instead of a list
+of dataframes}
 }
 \value{
 A list with elements equal to `length(filelist)``

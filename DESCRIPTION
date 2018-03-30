@@ -6,9 +6,10 @@ Author: Conor Neilson
 Maintainer: Conor Neilson <condwanaland@gmail.com>
 Description: Easily read multiple csv files into your R session, and store
     them in a list. Functions are provided to later reshape this list 
-    into a single dataframe, and add an identifier column
-License: GPL -3
+    into a single dataframe, and add an identifier column.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr
+Imports: dplyr,
+    magrittr
 RoxygenNote: 6.0.1
