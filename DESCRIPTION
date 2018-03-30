@@ -1,0 +1,14 @@
+Package: multiread
+Type: Package
+Title: Simplify Importing Multiple csv Files
+Version: 0.1.0
+Author: Conor Neilson
+Maintainer: Conor Neilson <condwanaland@gmail.com>
+Description: Easily read multiple csv files into your R session, and store
+    them in a list. Functions are provided to later reshape this list 
+    into a single dataframe, and add an identifier column
+License: GPL -3
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr
+RoxygenNote: 6.0.1
