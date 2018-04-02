@@ -1,6 +1,6 @@
 Package: multiread
 Type: Package
-Title: Simplify Importing Multiple csv Files
+Title: Easily Import Multiple Csv Files
 Version: 0.1.0
 Author: Conor Neilson
 Maintainer: Conor Neilson <condwanaland@gmail.com>
