@@ -1,26 +1,13 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
-# multiread
+multiread
+=========
 
 The goal of multiread is to wrap the process of reading in multiple csv files into R, and work with them in either list or dataframe format
 
-
 Most people are accustomed to the process that follows
 
-```{r example, eval=FALSE}
+``` r
 myfiles <- list.files(pattern = ".csv")
 mydata <- lapply(myfiles, read.csv)
 do.call(rbind, mydata)
@@ -30,21 +17,20 @@ Rather than overload beginners with concepts like `lapply` and `do.call`, which 
 
 Under `multiread`, the above code is replaced with
 
-```{r, eval=FALSE}
+``` r
 library(multiread)
 myfiles <- list.files(pattern = ".csv")
 mydata <- multiread(myfiles, as_df = TRUE)
 ```
 
-Alternatively, if you would rather leave your dataframes in list format, simply use 
+Alternatively, if you would rather leave your dataframes in list format, simply use
 
-```{r, eval=FALSE}
+``` r
 my_data <- multiread(myfiles, as_df = FALSE)
 ```
 
 Later, if you want to convert them to a dataframe, you can use `convert_df`
 
-```{r, eval=FALSE}
+``` r
 my_data <- convert_df(my_data)
 ```
-
